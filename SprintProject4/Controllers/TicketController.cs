@@ -55,7 +55,7 @@ namespace SprintProject4.Controllers
 
                 try
                 {
-                    UploadBlob(conStr, attendStr, "newcontainer", true);
+                    UploadBlob(conStr, attendStr, "ticketcollection", true);
                     ViewBag.MessageToScreent = "Details Updated to Blob :" + attendStr;
                 }
                 catch (Exception ex)
@@ -124,8 +124,9 @@ namespace SprintProject4.Controllers
         {
             var serviceClient = new BlobServiceClient(conStr);
             var containerClient = serviceClient.GetBlobContainerClient(containerName);
+            containerClient.CreateIfNotExists();
 
-            fileName = "data.txt";
+            fileName = "TicketDetails.txt";
             existingContent = "";
             blobClient = containerClient.GetBlobClient(fileName);
         }
