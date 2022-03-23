@@ -51,11 +51,11 @@ namespace SprintProject4.Controllers
             {
                 string attendStr = Newtonsoft.Json.JsonConvert.SerializeObject(ticket);
                 //string conStr = "BlobEndpoint=https://logicalstorageaccount.blob.core.windows.net/;QueueEndpoint=https://logicalstorageaccount.queue.core.windows.net/;FileEndpoint=https://logicalstorageaccount.file.core.windows.net/;TableEndpoint=https://logicalstorageaccount.table.core.windows.net/;SharedAccessSignature=sv=2020-08-04&ss=bfqt&srt=sco&sp=rwdlacuptfx&se=2021-07-31T12:43:25Z&st=2021-07-31T04:43:25Z&spr=https&sig=shn1vydXzTEDDoSQdpQTqqCAFxKcPNvWqLqfGfg02hw%3D";
-                string conStr = "DefaultEndpointsProtocol=https;AccountName=ticketcollectionproject;AccountKey=Mh/fmmNnYqJvjikdt5bZbzmrm6+mcWw+L1Ew7Sw9dnzr4LCz3uPylOh2FB540jzEZj45pIu9O1kXhZuZwCPnNg==;EndpointSuffix=core.windows.net";
+                string conStr = "DefaultEndpointsProtocol=https;AccountName=ticketcollectionproject;AccountKey=yv82xl89Yaa6rSOsoLmh/a7kMa+ulTsdL4c20fnLFeC9GnbQEnW96NQ9koaCzbA6NmUWK0vdaxJndQHg4ne0ow==;EndpointSuffix=core.windows.net";
 
                 try
                 {
-                    UploadBlob(conStr, attendStr, "ticketcollection", true);
+                    UploadBlob(conStr, attendStr, "ticketcollection1", true);
                     ViewBag.MessageToScreent = "Details Updated to Blob :" + attendStr;
                 }
                 catch (Exception ex)
@@ -126,7 +126,7 @@ namespace SprintProject4.Controllers
             var containerClient = serviceClient.GetBlobContainerClient(containerName);
             containerClient.CreateIfNotExists();
 
-            fileName = "TicketDetails.txt";
+            fileName = "TicketDetails1.txt";
             existingContent = "";
             blobClient = containerClient.GetBlobClient(fileName);
         }
