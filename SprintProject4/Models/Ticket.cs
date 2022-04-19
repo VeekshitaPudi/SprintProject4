@@ -20,7 +20,6 @@ namespace SprintProject4.Models
         public string EmailId { get; set; }
         [DisplayName("Phone Number")]
         public string PhoneNumber { get; set; }
-        [DisplayName("Ticket Cost")]
-        public float TicketCost { get; set; }
+        
     }
 }
